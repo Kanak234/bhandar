@@ -1,0 +1,79 @@
+# भंडार की सूची — यही एक file है जिसे तुम्हें बदलना है
+#
+# हर लाइन में चार खाने, बीच में TAB (space नहीं):
+#
+#     नाम <TAB> रास्ता <TAB> public|private <TAB> ब्योरा
+#
+# ध्यान: बीच में TAB होना ज़रूरी है. अगर तुम्हारा editor TAB को spaces
+# में बदल देता है, तो वो setting बंद करो — वरना script लाइन पढ़ ही
+# नहीं पाएगी.
+#
+# --------------------------------------------------------------------
+# public/private का फ़ैसला किस आधार पर
+# --------------------------------------------------------------------
+#
+# public तब जब — कोई और उससे कुछ सीख सके, या तुम उसे दिखाना चाहते हो
+#                 (internship, admission, GitHub की शक्ल)
+#
+# private तब जब — तीनों में से कोई एक बात सच हो:
+#                 १. किसी और का नाम/data उसमें है (टीम, college, कंपनी)
+#                 २. उसमें कुछ गुप्त हो सकता है (keys, निजी जानकारी)
+#                 ३. वो अभी अधूरा है और अधूरा दिखने से नुक़सान है
+#
+# शक हो तो private रखो. public बाद में किया जा सकता है —
+# एक क्लिक में. उल्टा नहीं होता.
+#
+# --------------------------------------------------------------------
+# नीचे जो लिखा है वो मेरा सुझाव है, हुक्म नहीं. रास्ते ख़ुद ठीक करो —
+# मुझे तुम्हारी मशीन के असली रास्ते नहीं पता, ये सिर्फ़ अंदाज़े हैं.
+# --------------------------------------------------------------------
+
+
+# ==== दिखाने लायक — public ====
+# ये वो हैं जो चलते हैं, जाँचे हुए हैं, और किसी और के काम आ सकते हैं
+
+abhyas	~/Desktop/ABHYAS	public	हज़ारीबाग़ के छात्रों के लिए offline AI/ML सीखने का औज़ार — Windows 7 पर भी चलता है
+sabha	~/Desktop/SABHA	public	कई AI सदस्यों का orchestrator — stdlib-only, 51 जाँचें
+naamkaran	~/Desktop/NAAMKARAN	public	बड़े Rust workspace में नाम बदलने वाला औज़ार
+
+
+# ==== अभी private, बाद में public ====
+# ये अच्छे हैं पर अभी तैयार नहीं. जब चलने लगें, GitHub पर एक क्लिक से
+# public हो जाएँगे.
+
+medha-ide	~/Desktop/ide	private	offline-first native IDE (PySide6) — पहले launch वाली गड़बड़ ठीक करो
+era-ai	~/Desktop/era	private	local-first निजी AI platform, चार Ollama models
+gpuforge	~/Desktop/gpuforge	private	heterogeneous multi-GPU training orchestrator
+vajra	~/Desktop/vajra	private	C++20 का अपना game engine
+vyuha	~/Desktop/vyuha	private	VS Code extension — 3D neural network visualizer
+
+
+# ==== private ही रहेंगे ====
+# हर एक की अपनी वजह नीचे लिखी है
+
+ira-console	~/Desktop/ira-console	private	assisted-pentest orchestrator — security tool है, सोचकर ही public करना
+healthforecast	~/Desktop/healthforecast	private	Infosys Springboard का project — पहले उनकी शर्तें देखो
+fasal-kavach	~/Desktop/fasal-kavach-new	private	पहले से repo है (Kanak234/tchva) — दोबारा मत बनाओ, इसे हटा दो
+rana-craft	~/Desktop/rana-craft	private	अमित राणा के लिए बना — उनके धंधे का data है, पूछे बिना public नहीं
+rksync-learn	~/Desktop/rksync	private	साझा venture — साथी से पूछे बिना public नहीं
+
+
+# --------------------------------------------------------------------
+# ira-console के बारे में एक बात
+#
+# वो एक ठीक-ठाक बना हुआ security औज़ार है — इजाज़त वाला गेट, दायरे की
+# जाँच, हर हुक्म से पहले मंज़ूरी, और पूरा audit log. सोच सही है.
+#
+# फिर भी public करने से पहले सोच लेना. GitHub पर pentest औज़ार रखना
+# आम बात है और ग़लत नहीं है. पर अगर कोई उसे ग़लत जगह इस्तेमाल करे और
+# तुम्हारा नाम उससे जुड़े, तो सफ़ाई देनी पड़ेगी.
+#
+# अगर public करो, तो README में सबसे ऊपर साफ़ लिखना कि यह सिर्फ़ अपने
+# या इजाज़त वाले तंत्र पर इस्तेमाल के लिए है.
+# --------------------------------------------------------------------
+#
+# जो projects Aug 16 वाले reformat में चले गए (ERA, Ira pipeline,
+# GPUForge) — उनके folder शायद अब मौजूद नहीं हैं. script उन्हें
+# 'folder नहीं मिला' कहकर छोड़ देगा, कुछ टूटेगा नहीं. जो बचे नहीं,
+# उनकी लाइन यहाँ से हटा दो.
+# --------------------------------------------------------------------
