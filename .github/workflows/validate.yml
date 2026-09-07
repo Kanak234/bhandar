@@ -1,0 +1,29 @@
+name: Validate Bhandar
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate shell syntax
+        # This catches malformed Bash before the publishing tool is used.
+        # It does not execute the script, access GitHub credentials, or push any repository.
+        run: bash -n bhandar.sh
+
+      - name: Verify required helper files exist
+        # The script depends on its project manifest and secret-scanning helper.
+        # This check protects the expected local workflow without changing project data.
+        run: |
+          test -f pariyojana.tsv
+          test -f aujaar/raaz_jaancho.py
