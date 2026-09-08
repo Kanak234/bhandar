@@ -1,0 +1,10 @@
+# परख (parakh.sh) की नक़ली keys — ये जान-बूझकर बनाई गई हैं ताकि जाँच
+# को जाँचा जा सके. असली नहीं हैं: एक में अंग्रेज़ी वर्णमाला है, बाक़ी
+# में बस A और B दोहराए हुए.
+#
+# यहाँ कुछ जोड़ने से पहले सोचना — यह जाँच को कमज़ोर करने का रास्ता है,
+# और सिर्फ़ पक्के झूठे अलार्म के लिए है.
+
+sk-abcdefghijklmnopqrstuvwxyz012345
+ghp_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+ghp_BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB

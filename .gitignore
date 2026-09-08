@@ -13,3 +13,6 @@ build/
 *.gguf
 *.pt
 *.safetensors
+
+# script की अपनी बही — यह हर मशीन की अलग है
+bhandar-bahi.txt
