@@ -92,6 +92,24 @@ printf 'sk-abcdefghijklmnopqrstuvwxyz012345\n' > "$d/.raazignore"
 git -C "$d" add -A >/dev/null; git -C "$d" commit -qm pehla
 kehna ".raazignore से झूठा अलार्म माफ़ होता है" 0 "$(jaancho_chalao "$d")"
 
+# नाम से पकड़ी गई file भी .raazignore से माफ़ होनी चाहिए — पर तभी जब
+# उसमें सचमुच कोई राज़ न हो. दो हिस्से: पहले बिना माफ़ी रुकना चाहिए,
+# फिर माफ़ी के साथ पास; और माफ़ी के बावजूद असली key नहीं छूटनी चाहिए.
+d="$(project_banao naam-maafi)"
+mkdir -p "$d/docker"
+printf 'SECRET_KEY=CHANGEME\nPOSTGRES_PASSWORD=CHANGEME\n' > "$d/docker/.env.example"
+printf '!.env.example\n' >> "$d/.gitignore"
+git -C "$d" add -A >/dev/null; git -C "$d" commit -qm pehla
+kehna "नाम से पकड़ी file बिना माफ़ी रोकती है" 1 "$(jaancho_chalao "$d")"
+
+printf 'docker/.env.example\n' > "$d/.raazignore"
+git -C "$d" add -A >/dev/null; git -C "$d" commit -qm doosra
+kehna "माफ़ी के बाद वही file पास होती है" 0 "$(jaancho_chalao "$d")"
+
+printf 'AWS_KEY=AKIAIOSFODNN7EXAMPLE\nsk-zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz\n' >> "$d/docker/.env.example"
+git -C "$d" add -A >/dev/null; git -C "$d" commit -qm teesra
+kehna "माफ़ी के बावजूद असली key नहीं छूटती" 1 "$(jaancho_chalao "$d")"
+
 d="$AKHADA/bina-git"; mkdir -p "$d"
 printf 'TOKEN=ghp_BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n' > "$d/x.txt"
 kehna "git नहीं है तो भी पूरा folder देखता है" 1 "$(jaancho_chalao "$d")"

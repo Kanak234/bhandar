@@ -189,10 +189,23 @@ def files_jaancho(jad, files, tukde):
         naam = os.path.basename(rel)
 
         # 1. नाम से ख़तरा
-        for pattern, kya in KHATRE_KE_NAAM:
-            if re.search(pattern, naam):
-                mile.append((rel, 0, kya, naam))
-                break
+        #
+        # यह जाँच भी .raazignore मानती है, और माफ़ी रास्ते से मिलती है.
+        #
+        # वजह: जिस project में जायज़ docker/.env.example या Helm का
+        # templates/secrets.yaml है, वो पहले कभी पास हो ही नहीं सकता था —
+        # भले ही दोनों में सिर्फ़ CHANGEME और {{ .Values... }} हो. जो जाँच
+        # हमेशा "रुको" कहती है, उसे लोग अनदेखा करने लगते हैं, और तब वो
+        # असली key भी नहीं रोक पाती.
+        #
+        # माफ़ी पूरे रास्ते से मिलानी पड़ती है (naam से नहीं), इसलिए हर
+        # file के लिए अलग से और जान-बूझकर लिखनी होती है. सामग्री की जाँच
+        # इससे ज़रा भी कमज़ोर नहीं होती — वो नीचे वैसी ही चलती है.
+        if not maaf_hai(rel, tukde):
+            for pattern, kya in KHATRE_KE_NAAM:
+                if re.search(pattern, naam):
+                    mile.append((rel, 0, kya, naam))
+                    break
 
         # 2. सामग्री से ख़तरा
         _, ext = os.path.splitext(naam)
