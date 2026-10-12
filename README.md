@@ -9,7 +9,7 @@ reaches a public GitHub repo is effectively permanent, so a project is only
 published once it has been scanned for secrets.
 
 > Detailed notes are in [`PADHO.txt`](PADHO.txt) (Hindi), and the command
-> reference is in [`CLAUDE-CODE-COMMANDS.md`](CLAUDE-CODE-COMMANDS.md).
+> reference is in [`AGENT-COMMANDS.md`](AGENT-COMMANDS.md).
 
 ## Files
 

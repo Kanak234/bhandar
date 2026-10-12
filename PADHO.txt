@@ -139,7 +139,7 @@ public या private — कैसे तय करें
       git commit -m "आज क्या किया"
       git push
 
-  Claude Code को कहो तो वो हर बड़े बदलाव के बाद यह ख़ुद कर देगा.
+  AI coding agent को कहो तो वो हर बड़े बदलाव के बाद यह ख़ुद कर देगा.
 
 
 भंडार ख़ुद ठीक चल रहा है या नहीं
@@ -158,10 +158,10 @@ public या private — कैसे तय करें
   बनाना पड़ता, इसलिए वो हाथ से जाँचना होगा.
 
 
-Claude Code के commands
+AI coding agent के commands
 ────────────────────────
 
-  CLAUDE-CODE-COMMANDS.md खोलो.
+  AGENT-COMMANDS.md खोलो.
 
   उसमें हर project के लिए अलग command है, और हर command में जाँच
   की शर्त बँधी है.
